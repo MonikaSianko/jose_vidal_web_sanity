@@ -1,47 +1,49 @@
-import { defineType, defineField } from 'sanity'
+import { defineType, defineField } from "sanity";
 
 export default defineType({
-  name: 'homeContact',
-  title: 'Home Contact Section',
-  type: 'object',
+  name: "homeContact",
+  title: "Home Contact Section",
+  type: "object",
+  fieldsets: [
+    {
+      name: "cards",
+      title: "Cards",
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      name: "map",
+      title: "Map",
+      options: { collapsible: true, collapsed: false },
+    },
+  ],
   fields: [
     defineField({
-      name: 'meta',
-      title: 'Section Meta',
-      type: 'sectionMeta',
-      initialValue: { sectionId: 'contact' },
+      name: "meta",
+      title: "Section Meta",
+      type: "sectionMeta",
+      initialValue: { sectionId: "contact" },
     }),
 
     defineField({
-      name: 'editorial',
-      title: 'Editorial',
-      type: 'homeEditorial',
-      description: 'Editorial content displayed in the Contact section.',
+      name: "contactDetails",
+      title: "Contact Card",
+      type: "homeContactDetails",
+      fieldset: "cards",
     }),
 
     defineField({
-      name: 'social',
-      title: 'Social',
-      type: 'homeSocial',
-      description: 'Social links displayed in the Contact section.',
+      name: "social",
+      title: "Social Card",
+      type: "homeSocial",
+      fieldset: "cards",
     }),
 
     defineField({
-      name: 'googleMapsLink',
-      title: 'Google Maps Link',
-      type: 'url',
-      description:
-        'Google Maps URL used for embedding in an iframe (or linking).',
-      validation: (Rule) =>
-        Rule.uri({
-          scheme: ['http', 'https'],
-        }),
+      name: "googleMapsLink",
+      title: "Google Maps Embed URL",
+      type: "url",
+      fieldset: "map",
+      validation: (Rule) => Rule.uri({ scheme: ["http", "https"] }),
     }),
   ],
-  preview: {
-    select: { title: 'meta.title', subtitle: 'meta.sectionId' },
-    prepare({ title, subtitle }) {
-      return { title: title ?? 'Contact', subtitle }
-    },
-  },
-})
+});
