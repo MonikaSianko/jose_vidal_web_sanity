@@ -43,7 +43,14 @@ export default defineType({
       title: "Google Maps Embed URL",
       type: "url",
       fieldset: "map",
-      validation: (Rule) => Rule.uri({ scheme: ["http", "https"] }),
+      description:
+        'Paste ONLY the value of the iframe "src" attribute from Google Maps embed. ' +
+        "How to get it: Open Google Maps → Share → Embed a map → Copy the iframe code → " +
+        'extract and paste only the URL inside src="...". Example: https://www.google.com/maps/embed?pb=...',
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ["http", "https"],
+        }),
     }),
   ],
 });

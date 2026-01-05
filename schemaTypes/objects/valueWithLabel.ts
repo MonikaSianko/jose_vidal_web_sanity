@@ -7,10 +7,9 @@ export default defineType({
   fields: [
     defineField({
       name: "label",
-      title: "Label (optional)",
+      title: "Label",
       type: "string",
-      description:
-        "Optional custom label. If empty, a default translated label will be used.",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "value",

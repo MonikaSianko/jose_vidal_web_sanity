@@ -25,6 +25,12 @@ export default defineType({
       type: "address",
     }),
 
+    defineField({
+      name: "addressLabel",
+      title: "Address label",
+      type: "string",
+    }),
+
     // optional later:
     // defineField({ name: 'cta', title: 'CTA', type: 'link' }),
   ],
