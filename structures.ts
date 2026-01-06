@@ -2,7 +2,6 @@ import type { StructureResolver } from "sanity/structure";
 
 const manualTypes = [
   "homePage",
-  "book",
   "course",
   "testimonial",
   "author",
@@ -17,7 +16,6 @@ export const structure: StructureResolver = (S) =>
 
       S.divider(),
 
-      S.documentTypeListItem("book").title("Books"),
       S.documentTypeListItem("course").title("Courses"),
       S.documentTypeListItem("testimonial").title("Testimonials"),
       S.documentTypeListItem("author").title("Authors"),

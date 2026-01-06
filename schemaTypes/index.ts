@@ -1,11 +1,9 @@
 import homePage from "./documents/homePage";
 import author from "./documents/author";
-import book from "./documents/book";
 import course from "./documents/course";
 import testimonial from "./documents/testimonial";
 import social from "./documents/social";
 import header from "./documents/header";
-import footer from "./documents/footer";
 
 import link from "./objects/link";
 import imageWithAlt from "./objects/imageWithAlt";
@@ -31,13 +29,11 @@ export const schemaTypes = [
   // documents
   homePage,
   author,
-  book,
   course,
   testimonial,
 
   social,
   header,
-  footer,
 
   // objects (global)
   link,
